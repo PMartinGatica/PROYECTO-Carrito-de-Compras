@@ -12,6 +12,15 @@ function cargarEventListeners(){
     //Elimina cursos
 
     carrito.addEventListener('click',eliminarCurso);
+
+    //Vaciar Carrito
+
+    vaciarCarrito.addEventListener('click',() =>{
+        articulosCarrito = [];
+        limpiarHTML();
+    })
+
+
 }
 
 //Funciones
@@ -47,7 +56,7 @@ function leerDatosCurso(curso){
     const infoCurso ={
         imagen: curso.querySelector('img').src,
         titulo : curso.querySelector('h4').textContent,
-        descuento:curso.querySelector('.precio span').textContent,
+        precio:curso.querySelector('.precio span').textContent,
         id:curso.querySelector('a').getAttribute('data-id'),
         cantidad:1
     }
